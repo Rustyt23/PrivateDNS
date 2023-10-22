@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginStart="16px"
+    android:layout_marginLeft="16px"
+    android:layout_marginEnd="16px"
+    android:layout_marginRight="16px">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.matthew.privatedns.MyViewModel" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvDomain"
+                android:layout_width="365dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:lines="3"
+                android:text="Domain: www.fast.com.\n\t\tfiber.google.com.\n\t\twww.speedtest.net."
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="fast.com"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:paddingHorizontal="16dp"
+                android:paddingRight="18dp"
+                android:text="@={viewModel.Purl}"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tvDNSServer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@{viewModel.dnsServe}" />
+
+            <Button
+                android:id="@+id/btnResolver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:onClick="@{() -> viewModel.onResolver()}"
+                android:text="Resolver" />
+
+            <TextView
+                android:id="@+id/tvResultLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:text="Result:" />
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{viewModel.result}" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
