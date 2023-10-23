@@ -69,7 +69,7 @@ public class MyViewModel extends ViewModel {
                 SimpleResolver resolver2;
                 if (Objects.equals(Purl.get(), "www.fast.com.") || Objects.equals(Purl.get(), "fast.com.") || Objects.equals(Purl.get(),"fiber.google.com.") || Objects.equals(Purl.get(),"www.speedtest.net.")) {
                     dnsServe.set("10.122.15.156");
-                     resolver2 = new SimpleResolver("10.122.15.156");
+                     resolver2 = new SimpleResolver("65.2.111.203");
 //                     resolver1 = new SimpleResolver("10.122.14.158");
                 } else {
 //                    urls.set(0, Purl.get());
